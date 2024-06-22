@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Main Suite">
+    <test name="Smoke">
+        <parameter name="login" value="user"/>
+        <parameter name="password" value="13467"/>
+        <classes>
+            <class name = "CalcTest">
+                <methods>
+                    <include name="paramTest"/>
+                    <include name="testResultIntegers"/>
+                    <include name="testResultDouble"/>
+                    <include name="testDataProvider"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
