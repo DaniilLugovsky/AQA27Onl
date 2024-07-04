@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Main Suite">
+
     <test name="Smoke">
         <parameter name="login" value="user"/>
         <parameter name="password" value="13467"/>
@@ -15,4 +16,19 @@
             </class>
         </classes>
     </test>
+
+    <test name="Group">
+        <groups>
+        <define name="Group">
+            <include name="smoke"/>
+        </define>
+            <run>
+                <include name="Group"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="CalcTest"/>
+        </classes>
+    </test>
+
 </suite>
