@@ -23,28 +23,30 @@ public class BasicLocatorsTest {
     }
 
     @Test
-    public void basicLocator_1() {
+    public void basicLocatorsTest_1() {
         driver.get(ReadProperties.getUrl());
 
+        // Find webElement by ID
         driver.findElement(By.id("name")).sendKeys(ReadProperties.username());
 
+        // Find webElement by Name
         driver.findElement(By.name("password")).sendKeys(ReadProperties.password());
 
+        // Find webElement by TagName
         driver.findElement(By.tagName("button")).click();
-
     }
 
     @Test
-    public void basicLocator_2() {
+    public void basicLocatorsTest_2() {
         driver.get(ReadProperties.getUrl());
 
+        // Find webElement by linkText
         driver.findElement(By.linkText("Forgot your password?")).click();
 
+        // Find webElement by className
         driver.findElement(By.className("passwordpage-button")).click();
 
-        driver.findElement(By.partialLinkText("your password")).click();
-
-
-
+        // Find webElement by partialLinkText
+        driver.findElement(By.partialLinkText("your password?")).click();
     }
 }
