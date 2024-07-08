@@ -23,17 +23,18 @@ public class BasicLocatorsTest {
     }
 
     @Test
-    public void basicLocatorsTest_1() {
+    public void basicLocatorsTest_1() throws InterruptedException {
         driver.get(ReadProperties.getUrl());
 
         // Find webElement by ID
-        driver.findElement(By.id("name")).sendKeys(ReadProperties.username());
+        driver.findElement(By.id("user-name")).sendKeys(ReadProperties.username());
 
         // Find webElement by Name
         driver.findElement(By.name("password")).sendKeys(ReadProperties.password());
 
         // Find webElement by TagName
-        driver.findElement(By.tagName("button")).click();
+        driver.findElement(By.id("login-button")).click();
+        Thread.sleep(5000);
     }
 
     @Test

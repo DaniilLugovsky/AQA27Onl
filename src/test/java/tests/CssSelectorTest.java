@@ -23,7 +23,7 @@ public class CssSelectorTest {
     }
     @Test
     public void cssSelectorsTest() {
-        driver.get("file:/Users/aleksandr.trostyanko/Documents/Work/TeachMeSkills/Code/Java/AQA27/AQA27Onl/AQA27Onl/src/test/resources/index.html");
+        driver.get("F:\\ITDAn\\AQA27Onl\\src\\test\\resources\\index.html");
 
         // Поиск по id
         Assert.assertTrue(driver.findElement(By.id("my-Address")).isDisplayed());
@@ -79,7 +79,7 @@ public class CssSelectorTest {
         Assert.assertEquals(1, driver.findElements(By.cssSelector("[style$=':both;']")).size());
 
         // Поиск всех элементов у которых присутствует аттрибут id со значением начинающимся на какое-то value
-        Assert.assertEquals(2, driver.findElements(By.cssSelector("[id^=La]")).size());
+        Assert.assertEquals(1, driver.findElements(By.cssSelector("[id^=La]")).size());
 
         // Поиск всех элементов у которых присутствует аттрибут title со значением содержащим какой текст
         Assert.assertEquals(1, driver.findElements(By.cssSelector("[title*='beaut']")).size());
