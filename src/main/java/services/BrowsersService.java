@@ -19,7 +19,6 @@ public class BrowsersService {
 
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--disable-gpu");
-                //chromeOptions.addArguments("--window-size=1920,1200");
                 chromeOptions.addArguments("--ignore-certificate-errors");
                 chromeOptions.addArguments("--silent");
                 chromeOptions.addArguments("--start-maximized");
@@ -40,7 +39,6 @@ public class BrowsersService {
     }
 
     public WebDriver getDriver() {
-        //driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
 
         return driver;

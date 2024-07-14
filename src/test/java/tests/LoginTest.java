@@ -8,37 +8,17 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void successLoginTest() {
-        Assert.assertTrue(
-                loginStep.successLogin(
-                                ReadProperties.getUsername(),
-                                ReadProperties.getPassword()
-                        )
-                        .isPageOpened()
-        );
+    public void firstLoginTest() {
+        Assert.assertTrue(userStep.successfulLogin("standard_user",ReadProperties.getPassword()).isPageOpened());
     }
 
     @Test
-    public void incorrectEmailLoginTest() {
-        Assert.assertEquals(
-                loginStep.incorrectLogin("sdsd", ReadProperties.getPassword()).getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again.",
-                "Неверное сообщение об ошибке");
+    public void secondLoginTest() {
+        Assert.assertTrue(userStep.successfulLogin("performance_glitch_user",ReadProperties.getPassword()).isPageOpened());
     }
 
     @Test
-    public void incorrectPswLoginTest() {
-        Assert.assertEquals(
-                loginStep.incorrectLogin(ReadProperties.getUsername(), "123456").getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again.",
-                "Неверное сообщение об ошибке");
-    }
-
-    @Test
-    public void shortPswLoginTest() {
-        Assert.assertEquals(
-                loginStep.incorrectLogin(ReadProperties.getUsername(), "123").getErrorFieldTextElement().getText(),
-                "Password is too short (5 characters required).",
-                "Неверное сообщение об ошибке");
+    public void thirdLoginTest() {
+        Assert.assertTrue(userStep.successfulLogin("problem_user",ReadProperties.getPassword()).isPageOpened());
     }
 }
