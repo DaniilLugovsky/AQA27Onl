@@ -7,55 +7,42 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-
-import java.sql.DriverManager;
 
 public class BrowsersService {
-
     private WebDriver driver = null;
-    public BrowsersService(){
-        switch (ReadProperties.browserName().toLowerCase()){
+
+    public BrowsersService() {
+        switch (ReadProperties.getBrowserName().toLowerCase()) {
             case "chrome":
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
-                WebDriverManager.getInstance(driverManagerType).clearDriverCache().setup();
+                WebDriverManager.getInstance(driverManagerType).setup();
 
-                driver = new ChromeDriver(getChromeOptions());
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--disable-gpu");
+                //chromeOptions.addArguments("--window-size=1920,1200");
+                chromeOptions.addArguments("--ignore-certificate-errors");
+                chromeOptions.addArguments("--silent");
+                chromeOptions.addArguments("--start-maximized");
+
+                driver = new ChromeDriver(chromeOptions);
+
                 break;
             case "firefox":
                 driverManagerType = DriverManagerType.FIREFOX;
-                WebDriverManager.getInstance(driverManagerType).clearDriverCache().setup();
-                driver = new FirefoxDriver(getFirefoxOptions());
+                WebDriverManager.getInstance(driverManagerType).setup();
+
+                driver = new FirefoxDriver();
                 break;
             default:
-                System.out.println("Browser" + ReadProperties.browserName() + "not supported");
+                System.out.println("Browser " + ReadProperties.getBrowserName() + " is not supported.");
+                break;
         }
     }
 
     public WebDriver getDriver() {
+        //driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+
         return driver;
     }
-
-    public ChromeOptions getChromeOptions() {
-        ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--disable-gpu");
-        options.addArguments("--ignore-certificate-errors");
-        options.addArguments("--silent");
-        //options.addArguments("--start-maximized");
-        options.addArguments("--private");
-
-        if (ReadProperties.isHeadless()){
-            options.addArguments("--headless");
-        }
-
-        return options;
-    }
-
-    public FirefoxOptions getFirefoxOptions() {
-        FirefoxOptions options = new FirefoxOptions();
-
-        return options;
-    }
-
 }
