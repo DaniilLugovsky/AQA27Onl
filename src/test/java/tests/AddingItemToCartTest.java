@@ -11,7 +11,7 @@ public class AddingItemToCartTest extends BaseTest {
     @Test
     public void addingItem() {
         userStep.successfulLogin(ReadProperties.getUsername(),ReadProperties.getPassword());
-        userStep.addingItemToCart();
+        orderStep.addingItemToCart();
         CartOfGoodsPage cartOfGoodsPage = new CartOfGoodsPage(driver);
         Assert.assertTrue(cartOfGoodsPage.getItemInCart().isDisplayed());
     }

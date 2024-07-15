@@ -10,7 +10,7 @@ public class RemovingAProductTest extends BaseTest {
     @Test
     public void removingAProduct() {
         userStep.successfulLogin(ReadProperties.getUsername(),ReadProperties.getPassword());
-        userStep.addingItemToCart();
+        orderStep.addingItemToCart();
         CartOfGoodsPage cartOfGoodsPage = new CartOfGoodsPage(driver);
         cartOfGoodsPage.clickDeleteItemInCartButton();
     }
