@@ -62,7 +62,7 @@ public class ActionsTest extends BaseTest {
         driver.get("http://the-internet.herokuapp.com/upload");
 
         WebElement fileUploadElement = waitsService.presenceOfElementLocated(By.id("file-upload"));
-        String pathToFile = ActionsTest.class.getClassLoader().getResource("data" + File.separator + "download.jpeg").getPath();
+        String pathToFile = "F:\\ITDAn\\AQA27Onl\\src\\test\\resources\\data\\download.jpeg";
         System.out.println(pathToFile);
 
         fileUploadElement.sendKeys(pathToFile);
