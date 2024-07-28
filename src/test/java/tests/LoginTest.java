@@ -10,12 +10,13 @@ public class LoginTest extends BaseTest {
     @Test
     public void successLoginTest() {
         Assert.assertTrue(
-                loginStep.successLogin(
+                userStep.successfulLogin(
                                 ReadProperties.getUsername(),
                                 ReadProperties.getPassword()
                         )
                         .isPageOpened()
         );
+        Assert.assertTrue(false);
     }
 
     @Test
