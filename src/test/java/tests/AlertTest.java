@@ -10,13 +10,12 @@ import org.testng.annotations.Test;
 public class AlertTest extends BaseTest {
 
     @Test
-    public void infoAlertTest() throws InterruptedException {
+    public void infoAlertTest() {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         WebElement button = driver.findElement(By.xpath("//button[. = 'Click for JS Confirm']"));
 
         driver.findElement(By.xpath("//button[. = 'Click for JS Alert']")).click();
-        Thread.sleep(2000);
 
         if (waitsService.alertIsPresent() != null) {
             Alert alert = driver.switchTo().alert();
@@ -27,26 +26,23 @@ public class AlertTest extends BaseTest {
         button.click();
 
 
-        Thread.sleep(2000);
     }
 
     @Test
-    public void confirmAlertTest() throws InterruptedException {
+    public void confirmAlertTest() {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         driver.findElement(By.xpath("//button[. = 'Click for JS Confirm']")).click();
-        Thread.sleep(2000);
 
         Alert alert = driver.switchTo().alert();
         Assert.assertEquals(alert.getText(), "I am a JS Confirm");
         alert.dismiss();
 
-        Thread.sleep(2000);
         Assert.assertEquals(waitsService.waitVisibilityOf(By.id("result")).getText(), "You clicked: Cancel");
     }
 
     @Test
-    public void promptAlertTest() throws InterruptedException {
+    public void promptAlertTest() {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         driver.findElement(By.xpath("//button[. = 'Click for JS Prompt']")).click();
@@ -58,7 +54,6 @@ public class AlertTest extends BaseTest {
         alert.sendKeys("Everything is OK!");
         alert.accept();
 
-        Thread.sleep(2000);
     }
 
 }
