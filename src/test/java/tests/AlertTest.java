@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 public class AlertTest extends BaseTest {
 
     @Test
-    public void infoAlertTest() {
+    public void infoAlertTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         WebElement button = driver.findElement(By.xpath("//button[. = 'Click for JS Confirm']"));
@@ -24,12 +24,10 @@ public class AlertTest extends BaseTest {
         }
 
         button.click();
-
-
     }
 
     @Test
-    public void confirmAlertTest() {
+    public void confirmAlertTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         driver.findElement(By.xpath("//button[. = 'Click for JS Confirm']")).click();
@@ -42,7 +40,7 @@ public class AlertTest extends BaseTest {
     }
 
     @Test
-    public void promptAlertTest() {
+    public void promptAlertTest() throws InterruptedException {
         driver.get("http://the-internet.herokuapp.com/javascript_alerts");
 
         driver.findElement(By.xpath("//button[. = 'Click for JS Prompt']")).click();
@@ -53,7 +51,5 @@ public class AlertTest extends BaseTest {
 
         alert.sendKeys("Everything is OK!");
         alert.accept();
-
     }
-
 }

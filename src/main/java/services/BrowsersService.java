@@ -15,7 +15,7 @@ public class BrowsersService {
     private WebDriver driver = null;
 
     public BrowsersService() {
-        switch (ReadProperties.getBrowserName().toLowerCase()) {
+        switch (ReadProperties.browserName().toLowerCase()) {
             case "chrome":
                 DriverManagerType driverManagerType = DriverManagerType.CHROME;
                 WebDriverManager.getInstance(driverManagerType).clearDriverCache().setup();
@@ -29,7 +29,7 @@ public class BrowsersService {
                 driver = new FirefoxDriver(getFirefoxOptions());
                 break;
             default:
-                System.out.println("Browser " + ReadProperties.getBrowserName() + " not supported");
+                System.out.println("Browser " + ReadProperties.browserName() + " not supported");
         }
     }
 
@@ -58,6 +58,5 @@ public class BrowsersService {
 
         return options;
     }
+
 }
-
-

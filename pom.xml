@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.tms</groupId>
     <artifactId>AQA27Onl</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -40,12 +40,14 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
@@ -53,11 +55,10 @@
         </dependency>
 
         <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-testng</artifactId>
-                <scope>test</scope>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
@@ -68,7 +69,7 @@
                 <version>3.1.2</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFle>target/test-classes/${suiteFileName}</suiteXmlFle>
+                        <!--suiteXmlFile>target/test-classes/${suiteFileName}</suiteXmlFile-->
                     </suiteXmlFiles>
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"

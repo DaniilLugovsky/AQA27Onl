@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class TopMenuPage extends BasePage {
-    private final By topPanelLocator = By.className("top-panel");
+    private final By TOP_PANEL_LOCATOR = By.className("top-panel");
 
     public TopMenuPage(WebDriver driver) {
         super(driver);
@@ -13,6 +13,10 @@ public class TopMenuPage extends BasePage {
 
     @Override
     protected By getPageIdentifier() {
-        return topPanelLocator;
+        return TOP_PANEL_LOCATOR;
+    }
+
+    public void logout() {
+
     }
 }

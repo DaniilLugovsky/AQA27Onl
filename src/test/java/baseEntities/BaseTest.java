@@ -8,33 +8,29 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import services.BrowsersService;
 import services.WaitsService;
-import steps.LoginStep;
-import steps.NavigationStep;
 import steps.UserStep;
 import utils.InvokedListener;
 
 @Listeners(InvokedListener.class)
 public class BaseTest {
     protected WebDriver driver;
-    protected LoginStep loginStep;
-    protected NavigationStep navigationStep;
-    protected WaitsService waitsService;
-
     protected UserStep userStep;
+    protected WaitsService waitsService;
 
     @BeforeMethod
     public void setup(ITestContext iTestContext) {
         driver = new BrowsersService().getDriver();
         waitsService = new WaitsService(driver);
-        loginStep = new LoginStep(driver);
-        navigationStep = new NavigationStep(driver);
-        userStep = new UserStep(driver);
+
         iTestContext.setAttribute("webdriver", driver);
+
+        userStep = new UserStep(driver);
+
         driver.get(ReadProperties.getUrl());
     }
 
     @AfterMethod
-    public void tearDown() {
+    public void teardown() {
         driver.quit();
     }
 }
