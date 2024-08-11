@@ -20,8 +20,8 @@ public class DashboardPage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return headerTitleLabelLocator;
+    protected WebElement getPageIdentifier() {
+        return pageDriver.findElement(headerTitleLabelLocator);
     }
 
     public void openPageByUrl() {
@@ -30,6 +30,6 @@ public class DashboardPage extends BasePage {
 
     // Блок атомарных методов
     public WebElement getHeaderTitleLabel() {
-        return driver.findElement(headerTitleLabelLocator);
+        return pageDriver.findElement(headerTitleLabelLocator);
     }
 }

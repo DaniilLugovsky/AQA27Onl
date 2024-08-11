@@ -3,6 +3,7 @@ package pages;
 import baseEntities.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class TopMenuPage extends BasePage {
     private final By topPanelLocator = By.className("top-panel");
@@ -12,7 +13,9 @@ public class TopMenuPage extends BasePage {
     }
 
     @Override
-    protected By getPageIdentifier() {
-        return topPanelLocator;
+    protected WebElement getPageIdentifier() {
+       return pageDriver.findElement(topPanelLocator);
     }
+
+    public void logout() {};
 }
