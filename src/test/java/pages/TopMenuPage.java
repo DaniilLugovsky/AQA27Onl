@@ -16,7 +16,4 @@ public class TopMenuPage extends BasePage {
         return TOP_PANEL_LOCATOR;
     }
 
-    public void logout() {
-
-    }
 }

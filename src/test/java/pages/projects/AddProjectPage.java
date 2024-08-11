@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AddProjectPage extends BaseProjectPage {
     private final By ADD_PROJECT_BUTTON_LOCATOR = By.id("accept");
-    private final By PROJECT_TYPE_RADIOBUTTON_LOCATOR = By.xpath("//*[@name=\"suite_mode\"]");
+    private final By PROJECT_TYPE_RADIO_BUTTON_LOCATOR = By.cssSelector("[name='suite_mode']");
 
     public AddProjectPage(WebDriver driver) {
         super(driver);
@@ -18,6 +18,7 @@ public class AddProjectPage extends BaseProjectPage {
     }
 
     public RadioButton getProjectTypeRadioButton() {
-        return new RadioButton(pageDriver, PROJECT_TYPE_RADIOBUTTON_LOCATOR);
+        return new RadioButton(pageDriver, PROJECT_TYPE_RADIO_BUTTON_LOCATOR);
     }
+
 }

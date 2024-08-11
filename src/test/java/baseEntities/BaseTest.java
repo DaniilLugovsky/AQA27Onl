@@ -6,6 +6,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
+import pages.DashboardPage;
 import services.BrowsersService;
 import services.WaitsService;
 import steps.UserStep;
@@ -17,6 +18,8 @@ public class BaseTest {
     protected UserStep userStep;
     protected WaitsService waitsService;
 
+    protected DashboardPage dashboardPage;
+
     @BeforeMethod
     public void setup(ITestContext iTestContext) {
         driver = new BrowsersService().getDriver();
@@ -25,6 +28,8 @@ public class BaseTest {
         iTestContext.setAttribute("webdriver", driver);
 
         userStep = new UserStep(driver);
+
+        dashboardPage = new DashboardPage(driver);
 
         driver.get(ReadProperties.getUrl());
     }
