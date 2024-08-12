@@ -9,6 +9,7 @@ public class BaseStep {
     protected LoginPage loginPage;
     protected DashboardPage dashboardPage;
 
+
     public BaseStep(WebDriver driver) {
         this.driver = driver;
 
