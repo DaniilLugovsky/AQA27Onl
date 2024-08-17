@@ -14,13 +14,13 @@ public class UserStep extends BaseStep {
     public DashboardPage successfulLogin(String username, String password) {
         login(username, password);
 
-        return dashboardPage;
+        return new DashboardPage(driver);
     }
 
     public LoginPage incorrectLogin(String username, String password) {
         login(username, password);
 
-        return loginPage;
+        return new LoginPage(driver);
     }
 
     private void login(String username, String password) {
