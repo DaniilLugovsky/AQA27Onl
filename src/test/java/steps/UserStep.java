@@ -9,7 +9,7 @@ import pages.DashboardPage;
 import pages.LoginPage;
 import pages.TestCase.AddTestCasePage;
 import pages.TestCase.TestCasePage;
-import pages.projects.EditProjectPage;
+import pages.projects.AddProjectPage;
 
 public class UserStep extends BaseStep {
 
@@ -53,18 +53,10 @@ public class UserStep extends BaseStep {
         dashboardPage.clickEdit();
     }
 
-    public EditProjectPage openEditProjectPage() {
+    public AddProjectPage openEditProjectPage() {
         openEditProject();
 
-        return editProjectPage;
-    }
-
-    public void clickCheckBox() {
-        editProjectPage.clickCheckBox();
-    }
-
-    public void removeCheckBox() {
-        editProjectPage.removeCheckBox();
+        return addProjectPage;
     }
 
     public TestCasePage transitionInTestCasePage () {
