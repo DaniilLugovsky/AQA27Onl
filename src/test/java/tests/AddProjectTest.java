@@ -8,10 +8,11 @@ public class AddProjectTest extends BaseTest {
 
     @Test
     public void addProjectTest() {
+        faker.number().numberBetween(0,2);
         project.setName(faker.company().name());
         project.setAnnouncement(faker.company().logo());
         project.setShowAnnouncement(random.nextBoolean());
-        project.setProjectType(random.nextInt(3));
+        project.setProjectType(faker.number().numberBetween(0,2));
         project.setEnableTCApprovals(random.nextBoolean());
         userStep.successfulLogin()
                 .clickAddProjectButton()

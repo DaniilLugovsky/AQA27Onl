@@ -1,12 +1,12 @@
 package models;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import java.util.Objects;
-
-@Data
+@Builder
 @EqualsAndHashCode(exclude = "id")
-public class Project {
+public class ProjectBuilder {
     private int id;
     private String name;
     private String announcement;
