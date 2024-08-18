@@ -77,6 +77,7 @@ public class UserStep extends BaseStep {
     public void selectDropDownByIndex(int index) {
         addTestCasePage.getPriorityDropDown(By.id("section_id_chzn")).selectByIndex(index);
     }
+
 }
 
 

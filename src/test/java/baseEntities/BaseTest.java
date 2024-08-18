@@ -2,6 +2,7 @@ package baseEntities;
 
 import com.github.javafaker.Faker;
 import configuration.ReadProperties;
+import models.Project;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
@@ -23,6 +24,7 @@ public class BaseTest {
     protected WaitsService waitsService;
     protected DashboardPage dashboardPage;
     protected ProjectsPage projectsPage;
+    protected Project project;
     protected Faker faker;
     protected Random random;
 
@@ -40,6 +42,7 @@ public class BaseTest {
 
         faker = new Faker();
         random = new Random();
+        project = new Project();
 
         driver.get(ReadProperties.getUrl());
     }

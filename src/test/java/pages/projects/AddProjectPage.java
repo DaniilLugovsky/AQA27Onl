@@ -4,6 +4,7 @@ import elements.Button;
 import elements.CheckBox;
 import elements.Input;
 import elements.RadioButton;
+import models.Project;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import pages.DashboardPage;
@@ -56,8 +57,13 @@ public class AddProjectPage extends BaseProjectPage {
         return new AddProjectPage(pageDriver);
     }
 
-    public AddProjectPage setShowAnnouncement() {
-        getShowAnnouncementCheckBox().setCheckBox();
+    public AddProjectPage setShowAnnouncement(Boolean flag) {
+        if(flag == true) {
+            getShowAnnouncementCheckBox().setCheckBox();
+        }
+        else {
+            getShowAnnouncementCheckBox().removeCheckBox();
+        }
         return new AddProjectPage(pageDriver);
     }
 
@@ -66,8 +72,21 @@ public class AddProjectPage extends BaseProjectPage {
         return new AddProjectPage(pageDriver);
     }
 
-    public AddProjectPage setEnableTestCase() {
-        getEnableTestCaseCheckBox().setCheckBox();
+    public AddProjectPage setEnableTestCase(Boolean flag) {
+        if(flag==true) {
+            getEnableTestCaseCheckBox().setCheckBox();
+        }
+        else {
+            getEnableTestCaseCheckBox().removeCheckBox();
+        }
+        return new AddProjectPage(pageDriver);
+    }
+    public AddProjectPage addProject(Project project) {
+        addProjectName(project.getName());
+        addProjectAnnouncement(project.getAnnouncement());
+        setShowAnnouncement(project.isShowAnnouncement());
+        setProjectType(project.getProjectType());
+        setEnableTestCase(project.isEnableTCApprovals());
         return new AddProjectPage(pageDriver);
     }
 
