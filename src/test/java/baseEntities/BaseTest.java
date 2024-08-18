@@ -15,6 +15,7 @@ import services.WaitsService;
 import steps.UserStep;
 import utils.InvokedListener;
 
+import java.util.Date;
 import java.util.Random;
 
 @Listeners(InvokedListener.class)
@@ -27,6 +28,7 @@ public class BaseTest {
     protected Project project;
     protected Faker faker;
     protected Random random;
+    Date date;
 
     @BeforeMethod
     public void setup(ITestContext iTestContext) {
