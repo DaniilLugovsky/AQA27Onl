@@ -1,15 +1,16 @@
 package steps;
 
 import baseEntities.BaseStep;
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 import pages.CartOfGoodsPage;
 import pages.CheckoutOverviewPage;
 import pages.CompletingYourOrderPage;
 
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
+
 public class OrderStep extends BaseStep {
-    public OrderStep(WebDriver driver) {
-        super(driver);
+    public OrderStep() {
+        super();
     }
 
     public CartOfGoodsPage addingItemToCart() {
@@ -20,9 +21,9 @@ public class OrderStep extends BaseStep {
 
     public CheckoutOverviewPage enteringPersonalData() {
         cartOfGoodsPage.clickCheckoutButton();
-        checkoutInformationPage.setFirstNameInput("Name");
-        checkoutInformationPage.setLastNameInput("LastName");
-        checkoutInformationPage.setPostalInput("12345");
+        checkoutInformationPage.setFirstNameInput(faker.name().firstName());
+        checkoutInformationPage.setLastNameInput(faker.name().lastName());
+        checkoutInformationPage.setPostalInput(faker.bothify("#######"));
         checkoutInformationPage.clickContinueButton();
         return checkoutOverviewPage;
     }
@@ -33,7 +34,7 @@ public class OrderStep extends BaseStep {
     }
 
     public CompletingYourOrderPage finalCheck() {
-        Assert.assertTrue(completingYourOrderPage.getFinalTitle().isDisplayed());
+        $(completingYourOrderPage.getFinalTitle()).shouldBe(visible);
         return completingYourOrderPage;
     }
 }

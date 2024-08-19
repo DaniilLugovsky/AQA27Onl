@@ -3,7 +3,6 @@ package tests;
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
 import org.testng.annotations.Test;
-import pages.CartOfGoodsPage;
 
 public class RemovingAProductTest extends BaseTest {
 
@@ -11,7 +10,6 @@ public class RemovingAProductTest extends BaseTest {
     public void removingAProduct() {
         userStep.successfulLogin(ReadProperties.getUsername(),ReadProperties.getPassword());
         orderStep.addingItemToCart();
-        CartOfGoodsPage cartOfGoodsPage = new CartOfGoodsPage(driver);
         cartOfGoodsPage.clickDeleteItemInCartButton();
     }
 

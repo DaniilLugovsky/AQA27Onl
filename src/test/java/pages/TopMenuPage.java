@@ -1,9 +1,10 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class TopMenuPage extends BasePage {
 
@@ -18,8 +19,8 @@ public class TopMenuPage extends BasePage {
 
 
 
-    public TopMenuPage(WebDriver driver) {
-        super(driver);
+    public TopMenuPage() {
+        super();
     }
 
     @Override
@@ -28,29 +29,27 @@ public class TopMenuPage extends BasePage {
     }
 
 
-
-    public WebElement getHeadingTitle() {
-        return pageDriver.findElement(HEADING);
+    public SelenideElement getHeadingTitle() {
+        return $(HEADING);
     }
-    public WebElement getShoppingButton() {
-        return pageDriver.findElement(SHOPPING_CART_LINK);
+    public SelenideElement getShoppingButton() {
+        return $(SHOPPING_CART_LINK);
     }
-    public WebElement getOpenMenuButton() {
-        return pageDriver.findElement(OPEN_MENU_BUTTON);
+    public SelenideElement getOpenMenuButton() {
+        return $(OPEN_MENU_BUTTON);
     }
-    public WebElement getMenuAllItemsButton() {
-        return pageDriver.findElement(MENU_ALL_ITEMS_BUTTON);
+    public SelenideElement getMenuAllItemsButton() {
+        return $(MENU_ALL_ITEMS_BUTTON);
     }
-    public WebElement getMenuAboutButton() {
-        return pageDriver.findElement(MENU_ABOUT_BUTTON);
+    public SelenideElement getMenuAboutButton() {
+        return $(MENU_ABOUT_BUTTON);
     }
-    public WebElement getMenuLogoutButton() {
-        return pageDriver.findElement(MENU_LOGOUT);
+    public SelenideElement getMenuLogoutButton() {
+        return $(MENU_LOGOUT);
     }
-    public WebElement getMenuResetAppStateButton() {
-        return pageDriver.findElement(MENU_RESET_APP_STATE_BUTTON);
+    public SelenideElement getMenuResetAppStateButton() {
+        return $(MENU_RESET_APP_STATE_BUTTON);
     }
-
 
 
     public void clickShoppingButton() {

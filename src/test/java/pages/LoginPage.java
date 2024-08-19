@@ -1,9 +1,10 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage extends BasePage {
 
@@ -12,33 +13,28 @@ public class LoginPage extends BasePage {
     private final By BUTTON_LOGIN = By.id("login-button");
 
 
-
-    public LoginPage(WebDriver driver) {
-        super(driver);
-    }
-
     @Override
     protected By getPageIdentifier() {
         return LOGIN_INPUT_LOCATOR;
     }
 
 
+    public SelenideElement getLoginInput() {
+      return $(LOGIN_INPUT_LOCATOR);
+    }
+    public SelenideElement getPasswordInput() {
+        return $(PASSWORD_INPUT_LOCATOR);
+    }
+    public SelenideElement getLoginButton() {
+        return $(BUTTON_LOGIN);
+    }
 
-    public WebElement getLoginInput() {
-        return pageDriver.findElement(LOGIN_INPUT_LOCATOR);
-    }
-    public WebElement getPasswordInput() {
-        return pageDriver.findElement(PASSWORD_INPUT_LOCATOR);
-    }
-    public WebElement getLoginButton() {
-        return pageDriver.findElement(BUTTON_LOGIN);
-    }
 
     public void setLoginValue(String value) {
-        getLoginInput().sendKeys(value);
+        getLoginInput().val(value);
     }
     public void setPasswordValue(String value) {
-        getPasswordInput().sendKeys(value);
+        getPasswordInput().val(value);
     }
     public void clickLoginButton() {
         getLoginButton().click();

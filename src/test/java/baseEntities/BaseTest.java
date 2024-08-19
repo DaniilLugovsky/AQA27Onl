@@ -1,34 +1,34 @@
 package baseEntities;
 
+
+import com.codeborne.selenide.Browsers;
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import configuration.ReadProperties;
-import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import services.BrowsersService;
+import org.testng.annotations.BeforeSuite;
+import pages.CartOfGoodsPage;
 import steps.OrderStep;
 import steps.UserStep;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class BaseTest {
-
-    protected WebDriver driver;
-
     protected UserStep userStep;
-
     protected OrderStep orderStep;
+    protected CartOfGoodsPage cartOfGoodsPage;
 
+    @BeforeSuite
+    public void setupBrowser() {
+        Configuration.browser = Browsers.CHROME;
+    }
     @BeforeMethod
     public void setUp() {
-        driver = new BrowsersService().getDriver();
+        open(ReadProperties.getUrl());
+        WebDriverRunner.driver().getWebDriver().manage().window().maximize();
 
-        userStep = new UserStep(driver);
-        orderStep = new OrderStep(driver);
-
-
-        driver.get(ReadProperties.getUrl());
-    }
-
-    @AfterMethod
-    public void teardown() {
-        driver.quit();
+        userStep = new UserStep();
+        orderStep = new OrderStep();
+        cartOfGoodsPage = new CartOfGoodsPage();
     }
 }

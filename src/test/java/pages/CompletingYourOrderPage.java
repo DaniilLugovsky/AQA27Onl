@@ -1,9 +1,10 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class CompletingYourOrderPage extends BasePage {
 
@@ -12,8 +13,8 @@ public class CompletingYourOrderPage extends BasePage {
 
 
 
-    public CompletingYourOrderPage(WebDriver driver) {
-        super(driver);
+    public CompletingYourOrderPage() {
+        super();
     }
 
     @Override
@@ -22,12 +23,11 @@ public class CompletingYourOrderPage extends BasePage {
     }
 
 
-
-    public WebElement getFinalTitle() {
-        return pageDriver.findElement(FINAL_TITLE);
+    public SelenideElement getFinalTitle() {
+        return $(FINAL_TITLE);
     }
-    public WebElement getBackHomeButton() {
-        return pageDriver.findElement(BACK_HOME_BUTTON);
+    public SelenideElement getBackHomeButton() {
+        return $(BACK_HOME_BUTTON);
     }
 
 

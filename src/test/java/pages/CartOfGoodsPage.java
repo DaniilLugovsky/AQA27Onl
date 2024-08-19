@@ -1,9 +1,10 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class CartOfGoodsPage extends BasePage {
 
@@ -17,10 +18,10 @@ public class CartOfGoodsPage extends BasePage {
 
 
 
-    public CartOfGoodsPage(WebDriver driver) {
-        super(driver);
+    public CartOfGoodsPage() {
+        super();
 
-        topMenuPage = new TopMenuPage(driver);
+        topMenuPage = new TopMenuPage();
     }
 
     @Override
@@ -29,21 +30,20 @@ public class CartOfGoodsPage extends BasePage {
     }
 
 
-
-    public WebElement getTitleLabel() {
-        return pageDriver.findElement(TITLE_LABEL);
+    public SelenideElement getTitleLabel() {
+        return $(TITLE_LABEL);
     }
-    public WebElement getItemInCart() {
-        return pageDriver.findElement(ITEM_IN_CART);
+    public SelenideElement getItemInCart() {
+        return $(ITEM_IN_CART);
     }
-    public WebElement getContinueShoppingButton() {
-        return pageDriver.findElement(CONTINUE_SHOPPING_BUTTON);
+    public SelenideElement getContinueShoppingButton() {
+        return $(CONTINUE_SHOPPING_BUTTON);
     }
-    public WebElement getCheckoutButton() {
-        return pageDriver.findElement(CHECKOUT_BUTTON);
+    public SelenideElement getCheckoutButton() {
+        return $(CHECKOUT_BUTTON);
     }
-    public WebElement getDeleteItemInCartButton() {
-        return pageDriver.findElement(DELETE_ITEM_IN_CART_BUTTON);
+    public SelenideElement getDeleteItemInCartButton() {
+        return $(DELETE_ITEM_IN_CART_BUTTON);
     }
 
 

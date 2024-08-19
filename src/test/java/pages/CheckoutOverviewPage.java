@@ -1,12 +1,12 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class CheckoutOverviewPage extends BasePage {
-
     public TopMenuPage topMenuPage;
 
     private final By CANCEL_BUTTON = By.id("cancel");
@@ -14,10 +14,10 @@ public class CheckoutOverviewPage extends BasePage {
 
 
 
-    public CheckoutOverviewPage(WebDriver driver) {
-        super(driver);
+    public CheckoutOverviewPage() {
+        super();
 
-        topMenuPage = new TopMenuPage(driver);
+        topMenuPage = new TopMenuPage();
     }
     @Override
     protected By getPageIdentifier() {
@@ -25,12 +25,11 @@ public class CheckoutOverviewPage extends BasePage {
     }
 
 
-
-    public WebElement getCanselButton() {
-        return pageDriver.findElement(CANCEL_BUTTON);
+    public SelenideElement getCanselButton() {
+        return $(CANCEL_BUTTON);
     }
-    public WebElement getFinishButton() {
-        return pageDriver.findElement(FINISH_BUTTON);
+    public SelenideElement getFinishButton() {
+        return $(FINISH_BUTTON);
     }
 
 

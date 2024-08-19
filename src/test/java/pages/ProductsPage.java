@@ -1,9 +1,10 @@
 package pages;
 
 import baseEntities.BasePage;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+
+import static com.codeborne.selenide.Selenide.$;
 
 public class ProductsPage extends BasePage {
 
@@ -15,10 +16,10 @@ public class ProductsPage extends BasePage {
 
 
 
-    public ProductsPage(WebDriver driver) {
-        super(driver);
+    public ProductsPage() {
+        super();
 
-        topMenuPage = new TopMenuPage(driver);
+        topMenuPage = new TopMenuPage();
     }
 
     @Override
@@ -27,12 +28,11 @@ public class ProductsPage extends BasePage {
     }
 
 
-
-    public WebElement getAddToCartButton() {
-        return pageDriver.findElement(ADD_TO_CART_BUTTON);
+    public SelenideElement getAddToCartButton() {
+        return $(ADD_TO_CART_BUTTON);
     }
-    public WebElement getRemoveButton() {
-        return pageDriver.findElement(REMOVE_BUTTON);
+    public SelenideElement getRemoveButton() {
+        return $(REMOVE_BUTTON);
     }
 
 

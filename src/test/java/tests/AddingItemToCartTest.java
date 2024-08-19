@@ -2,9 +2,10 @@ package tests;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.CartOfGoodsPage;
+
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 
 public class AddingItemToCartTest extends BaseTest {
 
@@ -12,7 +13,6 @@ public class AddingItemToCartTest extends BaseTest {
     public void addingItem() {
         userStep.successfulLogin(ReadProperties.getUsername(),ReadProperties.getPassword());
         orderStep.addingItemToCart();
-        CartOfGoodsPage cartOfGoodsPage = new CartOfGoodsPage(driver);
-        Assert.assertTrue(cartOfGoodsPage.getItemInCart().isDisplayed());
+        $(cartOfGoodsPage.getItemInCart()).shouldBe(visible);
     }
 }
