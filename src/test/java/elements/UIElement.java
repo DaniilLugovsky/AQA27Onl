@@ -37,7 +37,6 @@ public class UIElement implements WebElement {
                 webElement.click();
             } catch (ElementClickInterceptedException ex1) {
                 Actions actions = new Actions(driver);
-
                 try {
                     actions
                             .click(webElement)

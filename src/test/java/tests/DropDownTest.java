@@ -10,6 +10,7 @@ public class DropDownTest extends BaseTest {
         userStep.successfulLogin();
         userStep.transitionInTestCasePage();
         userStep.addTestCase();
-        userStep.selectDropDownByIndex(0);
+        userStep.selectDropDownByIndex(6);
+        userStep.selectDropDownByText("Other");
     }
 }

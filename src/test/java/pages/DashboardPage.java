@@ -12,7 +12,7 @@ public class DashboardPage extends BasePage {
 
     private final By TRANSITION_EXPORTS_BUTTON = By.id("navigation-data-management-exports");
 
-    private final By TESTCASES_PAGE_LOCATOR = By.xpath("//a[@href=\"index.php?/suites/view/1\"]");
+    private final By TESTCASES_PAGE_LOCATOR = By.cssSelector("[href='index.php?/suites/view/2']");
 
     public TopMenuPage topMenuPage;
 

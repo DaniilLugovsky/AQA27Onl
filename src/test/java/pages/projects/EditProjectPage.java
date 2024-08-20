@@ -26,11 +26,11 @@ public class EditProjectPage extends BaseProjectPage {
     }
 
     public void clickCheckBox() {
-        getCheckBoxButton().setCheckBox();
+        getCheckBoxButton().setCheckBox(true);
     }
 
     public void removeCheckBox() {
-        getCheckBoxButton().removeCheckBox();
+        getCheckBoxButton().setCheckBox(false);
     }
 
     public RadioButton getProjectTypeRadioButton() {

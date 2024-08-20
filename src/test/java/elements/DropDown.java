@@ -3,6 +3,8 @@ package elements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,21 @@ public class DropDown {
     }
     public void selectByIndex(int index) {
         actionElement.click();
-        parametersElementList.get(index).click();
+        if (index >= 0 && index < parametersElementList.size()) {
+            parametersElementList.get(index).click();
+        } else {
+            throw new IndexOutOfBoundsException("Индекс больше размера коллекции");
+        }
+    }
+
+    public void selectByText(String text) {
+        actionElement.click();
+        for (UIElement uiElement : parametersElementList) {
+                if (uiElement.getText().equals(text)) {
+                    uiElement.click();
+                    return;
+                }
+        }
+        throw new IllegalArgumentException("Элемента с таким текстом не существует");
     }
 }
