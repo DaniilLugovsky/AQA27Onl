@@ -14,8 +14,6 @@ public class ProductsPage extends BasePage {
     private final By ADD_TO_CART_BUTTON = By.id("add-to-cart-sauce-labs-backpack");
     private final By REMOVE_BUTTON = By.id("remove-sauce-labs-backpack");
 
-
-
     public ProductsPage() {
         super();
 
@@ -27,18 +25,18 @@ public class ProductsPage extends BasePage {
         return HEADER_TITLE_LABEL_LOCATION;
     }
 
-
     public SelenideElement getAddToCartButton() {
         return $(ADD_TO_CART_BUTTON);
     }
+
     public SelenideElement getRemoveButton() {
         return $(REMOVE_BUTTON);
     }
 
-
     public void clickAddToCartButton() {
         getAddToCartButton().click();
     }
+
     public void clickRemoveButton() {
         getRemoveButton().click();
     }

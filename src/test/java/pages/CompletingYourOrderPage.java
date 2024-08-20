@@ -11,8 +11,6 @@ public class CompletingYourOrderPage extends BasePage {
     private final By FINAL_TITLE = By.className("complete-header");
     private final By BACK_HOME_BUTTON = By.id("back-to-products");
 
-
-
     public CompletingYourOrderPage() {
         super();
     }
@@ -22,14 +20,13 @@ public class CompletingYourOrderPage extends BasePage {
         return FINAL_TITLE;
     }
 
-
     public SelenideElement getFinalTitle() {
         return $(FINAL_TITLE);
     }
+
     public SelenideElement getBackHomeButton() {
         return $(BACK_HOME_BUTTON);
     }
-
 
     public void clickBackHomeButton(){
         getBackHomeButton().click();

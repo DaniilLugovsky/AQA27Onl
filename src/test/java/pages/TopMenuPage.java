@@ -32,42 +32,53 @@ public class TopMenuPage extends BasePage {
     public SelenideElement getHeadingTitle() {
         return $(HEADING);
     }
+
     public SelenideElement getShoppingButton() {
         return $(SHOPPING_CART_LINK);
     }
+
     public SelenideElement getOpenMenuButton() {
         return $(OPEN_MENU_BUTTON);
     }
+
     public SelenideElement getMenuAllItemsButton() {
         return $(MENU_ALL_ITEMS_BUTTON);
     }
+
     public SelenideElement getMenuAboutButton() {
         return $(MENU_ABOUT_BUTTON);
     }
+
     public SelenideElement getMenuLogoutButton() {
         return $(MENU_LOGOUT);
     }
+
     public SelenideElement getMenuResetAppStateButton() {
         return $(MENU_RESET_APP_STATE_BUTTON);
     }
 
-
     public void clickShoppingButton() {
         getShoppingButton().click();
     }
+
     public void clickOpenMenuButton() {
         getOpenMenuButton().click();
     }
+
     public void clickMenuAllItemsButton() {
         getMenuAllItemsButton().click();
     }
+
     public void clickMenuAboutButton() {
         getMenuAboutButton().click();
     }
+
     public void clickMenuLogoutButton() {
         getMenuLogoutButton().click();
     }
+
     public void clickMenuResetAppStateButton() {
         getMenuResetAppStateButton().click();
     }
+
 }
