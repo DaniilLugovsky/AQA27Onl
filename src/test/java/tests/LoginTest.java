@@ -12,7 +12,6 @@ public class LoginTest extends BaseTest {
         Assert.assertTrue(
                 userStep.successfulLogin(ReadProperties.getUsername(), ReadProperties.getPassword())
                         .isPageOpened());
-                Assert.assertTrue(false);
     }
     @Test
     public void incorrectEmailLoginTest() {
