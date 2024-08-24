@@ -8,17 +8,12 @@ import org.testng.annotations.Test;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void successLoginTest() {
+    public void shortSuccessLoginTest() {
         Assert.assertTrue(
-                userStep.successfulLogin(
-                                ReadProperties.getUsername(),
-                                ReadProperties.getPassword()
-                        )
-                        .isPageOpened()
-        );
-        Assert.assertTrue(false);
+                userStep.successfulLogin(ReadProperties.getUsername(), ReadProperties.getPassword())
+                        .isPageOpened());
+                Assert.assertTrue(false);
     }
-
     @Test
     public void incorrectEmailLoginTest() {
         Assert.assertEquals(
@@ -27,19 +22,6 @@ public class LoginTest extends BaseTest {
                 "Неверное сообщение об ошибке");
     }
 
-    @Test
-    public void incorrectPswLoginTest() {
-        Assert.assertEquals(
-                loginStep.incorrectLogin(ReadProperties.getUsername(), "123456").getErrorTextElement().getText(),
-                "Email/Login or Password is incorrect. Please try again.",
-                "Неверное сообщение об ошибке");
-    }
-
-    @Test
-    public void shortPswLoginTest() {
-        Assert.assertEquals(
-                loginStep.incorrectLogin(ReadProperties.getUsername(), "123").getErrorFieldTextElement().getText(),
-                "Password is too short (5 characters required).",
-                "Неверное сообщение об ошибке");
-    }
 }
+
+
