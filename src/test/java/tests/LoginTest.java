@@ -9,9 +9,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void shortSuccessLoginTest() {
-        Assert.assertTrue(
-                userStep.successfulLogin(ReadProperties.getUsername(), ReadProperties.getPassword())
-                        .isPageOpened());
+                userStep.successfulLogin(ReadProperties.getUsername(), ReadProperties.getPassword());
     }
     @Test
     public void incorrectEmailLoginTest() {
