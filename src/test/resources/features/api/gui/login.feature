@@ -1,9 +1,10 @@
+@gui
 Feature: Validation login functionality
 
   Background:
-    Given init browser
-    * open login page
+    Given open login page
 
+  @smoke
   Scenario: Successful login
     When login with correct username testrailaqa27@mail.ru and password Qwertyu_1
     Then dashboard page is displayed
