@@ -9,7 +9,7 @@ public class RadioButtonTest extends BaseTest {
     @Test
     public void radioButtonTest() {
             userStep.successfulLogin();
-            driver.get("https://aqa2704.testrail.io/index.php?/admin/projects/add");
+            driver.get("https://testrailaqa.testrail.io/index.php?/admin/projects/add");
             AddProjectPage addProjectPage = new AddProjectPage(driver);
             addProjectPage.getProjectTypeRadioButton().selectByText("Use multiple test suites to manage cases");
             addProjectPage.getProjectTypeRadioButton().selectByValue("2");

@@ -82,12 +82,12 @@ public class UserStep extends BaseStep {
         return addTestCasePage;
     }
 
-    public void selectDropDownByIndex(int index) {
-        addTestCasePage.getPriorityDropDown(By.id("type_id_chzn")).selectByIndex(index);
+    public void selectTypeDropDownByIndex(int index) {
+        addTestCasePage.getTypeDropDown().selectByIndex(index);
     }
 
-    public void selectDropDownByText(String text) {
-        addTestCasePage.getPriorityDropDown(By.id("type_id_chzn")).selectByText(text);
+    public void selectTypeDropDownByText(String text) {
+        addTestCasePage.getTypeDropDown().selectByText(text);
     }
 
 }

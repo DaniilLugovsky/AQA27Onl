@@ -52,7 +52,6 @@ public class RadioButton {
     public void selectByText(String text) {
         for (UIElement uiElement : uiElementsList) {
             UIElement parent = uiElement.getParentElement();
-
             if (parent.findElements(By.tagName("strong")).size() > 0) {
                 if (parent.findElement(By.tagName("strong")).getText().equals(text)) {
                     uiElement.click();
