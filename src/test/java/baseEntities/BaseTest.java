@@ -8,6 +8,7 @@ import configuration.ReadProperties;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import pages.CartOfGoodsPage;
+import pages.ProductsPage;
 import steps.OrderStep;
 import steps.UserStep;
 

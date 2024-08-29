@@ -14,6 +14,9 @@ public class OrderStep extends BaseStep {
     }
 
     public CartOfGoodsPage addingItemToCart() {
+        if (!productsPage.getAddToCartButton().isDisplayed()) {
+            productsPage.getRemoveButton().click();
+        }
         productsPage.clickAddToCartButton();
         productsPage.topMenuPage.clickShoppingButton();
         return cartOfGoodsPage;
