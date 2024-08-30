@@ -3,10 +3,10 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = {"src/test/resources/features"},
+        features = {"src/test/resources/features/gui/milestones.feature"},
         glue = "stepDefs",
         plugin = {"json:target/cucumber.json", "html:target/site/cucumber-pretty.html"},
-        tags = "@api"
+        tags = "@gui"
 )
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
