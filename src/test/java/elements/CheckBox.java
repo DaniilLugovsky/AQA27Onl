@@ -11,7 +11,7 @@ public class CheckBox {
     }
 
     public void setCheckBox(Boolean flag) {
-        if (flag == true) {
+        if (flag) {
             if (!uiElement.isSelected()) {
                 uiElement.click();
             }
