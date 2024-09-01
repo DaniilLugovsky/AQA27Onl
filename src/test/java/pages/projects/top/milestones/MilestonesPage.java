@@ -27,30 +27,39 @@ public class MilestonesPage extends BasePage {
     public WebElement getMessageSuccess() {
         return waitsService.presenceOfElementLocated(MESSAGE_SUCCESS_LOCATOR);
     }
+
     public WebElement getMessageUpdateSuccess() {
         return waitsService.presenceOfElementLocated(MESSAGE_SUCCESS_UPDATE_LOCATOR);
     }
+
     public WebElement getMessageDeleteSuccess() {
         return waitsService.presenceOfElementLocated(MESSAGE_SUCCESS_DELETE_LOCATOR);
     }
+
     public WebElement getMilestonesPersonalButton() {
         return waitsService.presenceOfElementLocated(MILESTONES_PERSONAL_BUTTON);
     }
+
     public WebElement getMilestonesPersonalUpdateButton() {
         return waitsService.presenceOfElementLocated(MILESTONES_PERSONAL_BUTTON_UPDATE);
     }
+
     public void clickMilestonesPersonalButton() {
         getMilestonesPersonalButton().click();
     }
+
     public void clickMilestonesPersonalUpdateButton() {
         getMilestonesPersonalUpdateButton().click();
     }
+
     public void isMessageSuccessDisplayed() {
         Assert.assertTrue(getMessageSuccess().isDisplayed());
     }
+
     public void isMessageUpdateSuccessDisplayed() {
         Assert.assertTrue(getMessageUpdateSuccess().isDisplayed());
     }
+
     public void isMessageSuccessfullyDeletedTheMilestoneDisplayed() {
         Assert.assertTrue(getMessageDeleteSuccess().isDisplayed());
     }

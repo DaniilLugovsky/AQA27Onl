@@ -16,6 +16,7 @@ public class ProjectsStepDefs extends BaseTest {
 
     DashboardPage dashboardPage;
     AddProjectPage addProjectPage;
+
     @When("user clicks add project button")
     public void userClicksAddProjectButton() {
         dashboardPage = new DashboardPage(baseTest.driver);

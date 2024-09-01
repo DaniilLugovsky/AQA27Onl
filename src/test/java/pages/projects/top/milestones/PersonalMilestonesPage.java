@@ -13,12 +13,14 @@ public class PersonalMilestonesPage extends BasePage {
     public PersonalMilestonesPage(WebDriver driver) {
         super(driver);
     }
+
     @Override
     protected By getPageIdentifier() {
         return headerTitleLabelLocator;
     }
+
     public Button getMilestonesEditButton() {
-        return new Button(driver,MILESTONES_EDIT_BUTTON_LOCATOR);
+        return new Button(driver, MILESTONES_EDIT_BUTTON_LOCATOR);
     }
 
     public void clickMilestonesEditButton() {

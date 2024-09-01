@@ -18,6 +18,7 @@ public class AddMilestonesPage extends BasePage {
     private final By END_DATE_LOCATOR = By.xpath("//input[@id='due_on']");
     private final By CHECK_BOX_MILESTONES_COMPLETED_LOCATOR = By.id("is_completed");
     private final By ADD_MILESTONES_BUTTON = By.id("accept");
+
     public AddMilestonesPage(WebDriver driver) {
         super(driver);
     }
@@ -28,52 +29,67 @@ public class AddMilestonesPage extends BasePage {
     }
 
     public Input getNameInput() {
-        return new Input(driver,NAME_INPUT_LOCATOR);
+        return new Input(driver, NAME_INPUT_LOCATOR);
     }
+
     public Input getReferenceInput() {
-        return new Input(driver,REFERENCES_INPUT_LOCATOR);
+        return new Input(driver, REFERENCES_INPUT_LOCATOR);
     }
+
     public Input getParentInput() {
-        return new Input(driver,PARENT_INPUT_LOCATOR);
+        return new Input(driver, PARENT_INPUT_LOCATOR);
     }
+
     public Input getDescriptionInput() {
-        return new Input(driver,DESCRIPTION_INPUT_LOCATOR);
+        return new Input(driver, DESCRIPTION_INPUT_LOCATOR);
     }
+
     public Button getAddMilestonesButton() {
-        return new Button(driver,ADD_MILESTONES_BUTTON);
+        return new Button(driver, ADD_MILESTONES_BUTTON);
     }
+
     public Input getStartDateInput() {
-        return new Input(driver,START_DATE_LOCATOR);
+        return new Input(driver, START_DATE_LOCATOR);
     }
+
     public Input getEndDateInput() {
-        return new Input(driver,END_DATE_LOCATOR);
+        return new Input(driver, END_DATE_LOCATOR);
     }
+
     public CheckBox getCheckBox() {
-        return new CheckBox(driver,CHECK_BOX_MILESTONES_COMPLETED_LOCATOR);
+        return new CheckBox(driver, CHECK_BOX_MILESTONES_COMPLETED_LOCATOR);
     }
+
     public void sendName(String name) {
         getNameInput().write(name);
     }
+
     public void sendReference(String reference) {
         getReferenceInput().write(reference);
     }
+
     public void sendParent(String parent) {
         getParentInput().write(parent);
     }
-    public void sendDescription(String description){
+
+    public void sendDescription(String description) {
         getDescriptionInput().write(description);
     }
+
     public void clickAddMilestones() {
         getAddMilestonesButton().click();
     }
+
     public void clickStartDateButton(String data) {
         getStartDateInput().write(data);
     }
+
     public void clickEndDateButton(String data) {
         getEndDateInput().write(data);
     }
-    public void setFlag(String flag){
-        if(flag == "true") {
+
+    public void setFlag(String flag) {
+        if (flag == "true") {
             getCheckBox().set();
         } else {
             getCheckBox().remove();

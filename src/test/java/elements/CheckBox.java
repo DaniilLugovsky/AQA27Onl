@@ -21,6 +21,7 @@ public class CheckBox {
             uiElement.click();
         }
     }
+
     public void set() {
         setCheckBox(true);
     }
@@ -32,6 +33,7 @@ public class CheckBox {
     public void ClickElement() {
         uiElement.click();
     }
+
     public String readCheckBox() {
         if (uiElement.isSelected()) {
             return "true";

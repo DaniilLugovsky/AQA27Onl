@@ -20,6 +20,7 @@ public class EditMilestonesPage extends BasePage {
     private final By DELETE_THIS_MILESTONE_BUTTON = By.xpath("//a[text()='Delete this milestone']");
     private final By DELETE_THIS_MILESTONE_CHECKBOX = By.xpath("//strong[text()='Yes, delete this milestone (cannot be undone)']/following::input");
     private final By DELETE_THIS_MILESTONE_OK_BUTTON = By.xpath("//a[@data-testid='caseFieldsTabDeleteDialogButtonOk']");
+
     public EditMilestonesPage(WebDriver driver) {
         super(driver);
     }
@@ -30,50 +31,65 @@ public class EditMilestonesPage extends BasePage {
     }
 
     public Input getNameInput() {
-        return new Input(driver,NAME_INPUT_LOCATOR);
+        return new Input(driver, NAME_INPUT_LOCATOR);
     }
+
     public Input getReferencesInput() {
-        return new Input(driver,REFERENCES_INPUT_LOCATOR);
+        return new Input(driver, REFERENCES_INPUT_LOCATOR);
     }
+
     public Input getDescriptionInput() {
-        return new Input(driver,DESCRIPTION_INPUT_LOCATOR);
+        return new Input(driver, DESCRIPTION_INPUT_LOCATOR);
     }
+
     public Input getStartDateInput() {
-        return new Input(driver,START_DATE_LOCATOR);
+        return new Input(driver, START_DATE_LOCATOR);
     }
+
     public Input getEndDateInput() {
-        return new Input(driver,END_DATE_LOCATOR);
+        return new Input(driver, END_DATE_LOCATOR);
     }
+
     public CheckBox getCheckBox() {
-        return new CheckBox(driver,CHECK_BOX_MILESTONES_COMPLETED_LOCATOR);
+        return new CheckBox(driver, CHECK_BOX_MILESTONES_COMPLETED_LOCATOR);
     }
+
     public Button getAddMilestonesButton() {
-        return new Button(driver,ADD_MILESTONES_BUTTON);
+        return new Button(driver, ADD_MILESTONES_BUTTON);
     }
+
     public Button getDeleteThisMilestoneButton() {
-        return new Button(driver,DELETE_THIS_MILESTONE_BUTTON);
+        return new Button(driver, DELETE_THIS_MILESTONE_BUTTON);
     }
+
     public CheckBox getDeleteThisMilestoneCheckBox() {
-        return new CheckBox(driver,DELETE_THIS_MILESTONE_CHECKBOX);
+        return new CheckBox(driver, DELETE_THIS_MILESTONE_CHECKBOX);
     }
+
     public Button getDeleteThisMilestoneOkButton() {
-        return new Button(driver,DELETE_THIS_MILESTONE_OK_BUTTON);
+        return new Button(driver, DELETE_THIS_MILESTONE_OK_BUTTON);
     }
+
     public void clearAndSendName(String name) {
         getNameInput().clearAndWrite(name);
     }
+
     public void clearAndSendReferences(String references) {
         getReferencesInput().clearAndWrite(references);
     }
+
     public void clearAndSendDescription(String description) {
         getDescriptionInput().clearAndWrite(description);
     }
+
     public void clearAndSendStartDate(String data) {
         getStartDateInput().clearAndWrite(data);
     }
+
     public void clearAndSendEndDate(String data) {
         getEndDateInput().clearAndWrite(data);
     }
+
     public void clearAndSendCheckBox(String flag) {
         if (flag == "true") {
             getCheckBox().set();
@@ -81,9 +97,11 @@ public class EditMilestonesPage extends BasePage {
             getCheckBox().remove();
         }
     }
+
     public void clickSaveMilestones() {
         getAddMilestonesButton().click();
     }
+
     public void deleteMilestone() {
         getDeleteThisMilestoneButton().click();
         getDeleteThisMilestoneCheckBox().set();

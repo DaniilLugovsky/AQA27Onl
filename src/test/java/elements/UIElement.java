@@ -101,6 +101,7 @@ public class UIElement implements WebElement {
         }
         return list;
     }
+
     @Override
     public UIElement findElement(By by) {
         return new UIElement(driver, webElement.findElement(by));

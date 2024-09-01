@@ -14,26 +14,32 @@ public class OverviewPage extends BasePage {
     public OverviewPage(WebDriver driver) {
         super(driver);
     }
+
     @Override
     protected By getPageIdentifier() {
         return headerTitleLabelLocator;
     }
 
     public Button getAddMilestonesButton() {
-        return new Button(driver,ADD_MILESTONES_BUTTON_LOCATOR);
+        return new Button(driver, ADD_MILESTONES_BUTTON_LOCATOR);
     }
+
     public Button getTopMilestonesListButton() {
-        return new Button(driver,TOP_MILESTONES_LIST_BUTTON_LOCATOR);
+        return new Button(driver, TOP_MILESTONES_LIST_BUTTON_LOCATOR);
     }
+
     public Button getTopTestsCasesListButton() {
         return new Button(driver, TOP_TESTS_CASES_LIST_BUTTON_LOCATOR);
     }
+
     public void clickAddMilestonesButton() {
         getAddMilestonesButton().click();
     }
+
     public void clickMilestonesListButton() {
         getTopMilestonesListButton().click();
     }
+
     public void clickTestsCasesListButton() {
         getTopTestsCasesListButton().click();
     }

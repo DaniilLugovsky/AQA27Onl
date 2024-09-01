@@ -30,19 +30,24 @@ public class DashboardPage extends BasePage {
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
+
     public WebElement getHeaderTitleLabel() {
         return driver.findElement(headerTitleLabelLocator);
     }
+
     // Блок атомарных методов
     public Button getAddProjectButton() {
-        return new Button(driver,ADD_PROJECT_BUTTON_LOCATOR);
+        return new Button(driver, ADD_PROJECT_BUTTON_LOCATOR);
     }
+
     public Button getProjectButton() {
-        return new Button(driver,PROJECT_BUTTON_LOCATOR);
+        return new Button(driver, PROJECT_BUTTON_LOCATOR);
     }
+
     public void clickAddProjectButton() {
         getAddProjectButton().click();
     }
+
     public void clickProjectButton() {
         getProjectButton().click();
     }

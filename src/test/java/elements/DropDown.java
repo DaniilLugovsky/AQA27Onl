@@ -22,11 +22,12 @@ public class DropDown {
         }
 
     }
+
     public void selectByIndex(int index) {
         actionElement.click();
         if (index >= 0 && index < parametersElementList.size()) {
             if (parametersElementList.get(index).isEnabled()) {
-               parametersElementList.get(index).click();
+                parametersElementList.get(index).click();
             }
         } else {
             throw new IndexOutOfBoundsException("Индекс больше размера коллекции");
@@ -36,13 +37,14 @@ public class DropDown {
     public void selectByText(String text) {
         actionElement.click();
         for (UIElement uiElement : parametersElementList) {
-                if (uiElement.getText().equals(text) && uiElement.isEnabled()) {
-                    uiElement.click();
-                    return;
-                }
+            if (uiElement.getText().equals(text) && uiElement.isEnabled()) {
+                uiElement.click();
+                return;
+            }
         }
         throw new IllegalArgumentException("Элемента с таким текстом не существует");
     }
+
     public String readTextElement() {
         return actionElement.getText();
     }
