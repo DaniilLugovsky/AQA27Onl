@@ -30,16 +30,10 @@ public class CheckBox {
         setCheckBox(false);
     }
 
-    public void ClickElement() {
-        uiElement.click();
-    }
-
     public String readCheckBox() {
         if (uiElement.isSelected()) {
             return "true";
-        } else if (!uiElement.isSelected()) {
-            return "false";
         }
-        return null;
+        return "false";
     }
 }

@@ -89,7 +89,7 @@ public class AddMilestonesPage extends BasePage {
     }
 
     public void setFlag(String flag) {
-        if (flag == "true") {
+        if (flag.equals("true")) {
             getCheckBox().set();
         } else {
             getCheckBox().remove();
