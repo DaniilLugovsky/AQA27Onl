@@ -1,6 +1,7 @@
 package pages;
 
 import baseEntities.BasePage;
+import elements.Button;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -29,17 +30,15 @@ public class DashboardPage extends BasePage {
     public void openPageByUrl() {
         super.openPageByUrl(pagePath);
     }
-
-    // Блок атомарных методов
     public WebElement getHeaderTitleLabel() {
         return driver.findElement(headerTitleLabelLocator);
     }
-
-    public WebElement getAddProjectButton() {
-        return waitsService.presenceOfElementLocated(ADD_PROJECT_BUTTON_LOCATOR);
+    // Блок атомарных методов
+    public Button getAddProjectButton() {
+        return new Button(driver,ADD_PROJECT_BUTTON_LOCATOR);
     }
-    public WebElement getProjectButton() {
-        return waitsService.presenceOfElementLocated(PROJECT_BUTTON_LOCATOR);
+    public Button getProjectButton() {
+        return new Button(driver,PROJECT_BUTTON_LOCATOR);
     }
     public void clickAddProjectButton() {
         getAddProjectButton().click();

@@ -3,7 +3,7 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
 @CucumberOptions(
-        features = {"src/test/resources/features/gui/milestones.feature"},
+        features = {"src/test/resources/features/gui"},
         glue = "stepDefs",
         plugin = {"json:target/cucumber.json", "html:target/site/cucumber-pretty.html"},
         tags = "@gui"
