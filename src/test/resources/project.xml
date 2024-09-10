@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project>
+    <name>AQA_27_onl_Project</name>
+    <id>1</id>
+    <announcement>Working draft</announcement>
+    <isShowAnnouncement>true</isShowAnnouncement>
+    <projectType>1</projectType>
+    <isEnableTCApprovals>true</isEnableTCApprovals>
+    <milestones>
+        <milestone>
+        <name>Aqa</name>
+        <references>references</references>
+        <parent>parent</parent>
+        <description>description</description>
+        <startDate>startDate</startDate>
+        <endDate>endDate</endDate>
+        <isMilestoneCompleted>true</isMilestoneCompleted>
+        </milestone>
+        <milestone>
+        <name>Aqa</name>
+        <references>references</references>
+        <parent>parent</parent>
+        <description>description</description>
+        <startDate>startDate</startDate>
+        <endDate>endDate</endDate>
+        <isMilestoneCompleted>true</isMilestoneCompleted>
+        </milestone>
+    </milestones>
+</project>

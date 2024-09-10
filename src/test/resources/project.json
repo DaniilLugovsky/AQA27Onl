@@ -1,0 +1,28 @@
+{
+  "name": "AQA_27_onl_Project",
+  "id": 1,
+  "announcement": "Working draft",
+  "isShowAnnouncement": true,
+  "projectType": 1,
+  "isEnableTCApprovals": true,
+  "milestones": [
+    {
+      "name": "Aqa",
+      "references": "references",
+      "parent": "parent",
+      "description": "description",
+      "startDate": "startDate",
+      "endDate": "endDate",
+      "isMilestoneCompleted": true
+    },
+    {
+      "name": "Aqa",
+      "references": "references",
+      "parent": "parent",
+      "description": "description",
+      "startDate": "startDate",
+      "endDate": "endDate",
+      "isMilestoneCompleted": true
+    }
+  ]
+}
